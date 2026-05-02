@@ -12,12 +12,14 @@ export class User {
     max: [30, 'Name must be at most 30 characters long'],
   })
   name: string;
+
   @Prop({
     required: true,
     type: String,
     unique: true,
   })
   email: string;
+
   @Prop({
     required: true,
     type: String,
@@ -25,38 +27,52 @@ export class User {
     max: [20, 'Password must be at most 20 characters long'],
   })
   password: string;
+
   @Prop({
     required: true,
     type: String,
     enum: ['admin', 'user'],
   })
   role: string;
+
   @Prop({
     type: String,
   })
   avatar: string;
+
   @Prop({
-    type: String,
+    type: Number,
   })
-  age: string;
+  age: number;
+
   @Prop({
     type: String,
   })
   phoneNumber: string;
+
   @Prop({
     type: String,
   })
   address: string;
+
   @Prop({
-    type: String,
-    enum: ['active', 'inactive'],
+    type: Boolean,
+    default: true,
   })
-  active: string;
+  active: boolean;
+
   @Prop({
     type: String,
     enum: ['male', 'female'],
   })
   gender: string;
+
+  @Prop({
+    type: String,
+    minlength: 6,
+    maxlength: 6,
+  })
+  verificationCode: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
