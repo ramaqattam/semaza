@@ -74,5 +74,5 @@ export class User {
   })
   verificationCode: string;
 }
-
+const test: number = 'هذا نص مش رقم';
 export const UserSchema = SchemaFactory.createForClass(User);
